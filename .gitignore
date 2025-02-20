@@ -1,0 +1,13 @@
+ProductApi/bin/*
+ProductMvc/bin/*
+ProductMvc/wwwroot/*
+ProductMvc/appsettings.json
+ProductApi/obj/*
+ProductMvc/obj/*
+
+# User-specific files
+*.user
+*.suo
+*.vs/
+.vscode/
+.idea/
