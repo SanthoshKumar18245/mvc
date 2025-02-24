@@ -17,27 +17,27 @@ namespace ProductMvc.Services
 
         public async Task<IEnumerable<Product>> GetProductsAsync()
         {
-            return await _httpClient.GetFromJsonAsync<IEnumerable<Product>>("http://localhost:5105/api/products");
+            return await _httpClient.GetFromJsonAsync<IEnumerable<Product>>("http://backend/api/products");
         }
 
         public async Task<Product> GetProductAsync(int id)
         {
-            return await _httpClient.GetFromJsonAsync<Product>($"http://localhost:5105/api/products/{id}");
+            return await _httpClient.GetFromJsonAsync<Product>($"http://backend/api/products/{id}");
         }
 
         public async Task CreateProductAsync(Product product)
         {
-            await _httpClient.PostAsJsonAsync("http://localhost:5105/api/products", product);
+            await _httpClient.PostAsJsonAsync("http://backend/api/products", product);
         }
 
         public async Task UpdateProductAsync(Product product)
         {
-            await _httpClient.PutAsJsonAsync($"http://localhost:5105/api/products/{product.Id}", product);
+            await _httpClient.PutAsJsonAsync($"http://backend/api/products/{product.Id}", product);
         }
 
         public async Task DeleteProductAsync(int id)
         {
-            await _httpClient.DeleteAsync($"http://localhost:5105/api/products/{id}");
+            await _httpClient.DeleteAsync($"http://backend/api/products/{id}");
         }
     }
 }
