@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  backend:
+    image: santhoshkirito/backend:latest
+    container_name: backend
+    build: 
+      context: ./ProductApi
+      dockerfile: Dockerfile
+    networks:
+      - my-network
+    ports:
+      - "5105:80"
+
+  frontend:
+    build: 
+      context: ./ProductMvc
+      dockerfile: Dockerfile
+    networks:
+      - my-network
+    ports:
+      - "5226:80"
+    depends_on:
+      - backend
+networks:
+  my-network:
+    driver: bridge
